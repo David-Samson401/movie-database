@@ -1,12 +1,40 @@
-# React + Vite
+# Movie Database App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **React + TailwindCSS** web application that allows users to search for movies and view their details.  
+This project is part of my **Capstone Project** for the ALX Front-End course.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Search Movies** – Find movies by title using the OMDB API
+- **Movie Details** – View information like year, genre, plot, and poster
+- **Responsive Design** – Works on desktop, tablet, and mobile
+- **Fast Setup** – Built with Vite for lightning-fast development
+- **TailwindCSS** – Modern and clean styling
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tech Stack
+
+- **Frontend:** React (Vite)
+- **Styling:** TailwindCSS, PostCSS, Autoprefixer
+- **API:** [OMDB API](http://www.omdbapi.com/) (movie data)
+- **Version Control:** Git & GitHub
+
+---
+
+## Project Structure
+
+movie-database/
+├─ src/
+│ ├─ components/ # Reusable UI components
+│ ├─ App.jsx # Main app component
+│ ├─ index.css # TailwindCSS styles
+│ └─ main.jsx # React entry point
+├─ public/ # Static assets
+├─ package.json # Project dependencies
+├─ tailwind.config.js # TailwindCSS configuration
+├─ postcss.config.js # PostCSS configuration
+├─ README.md # Project documentation
+└─ ...
