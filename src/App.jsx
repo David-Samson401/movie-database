@@ -1,15 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { useState } from 'react';
+import SearchBar from './components/SearchBar';
+import HomePage from './components/HomePage';
+import MovieDetails from './components/MovieDetails';
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedMovieId, setSelectedMovieId] = useState(null);
+
+  const handleMovieClick = (id) => {
+    setSelectedMovieId(id);
+  };
+  
+  const handleCloseDetails = () => {
+    setSelectedMovieId(null);
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900">
-      <h1 className="text-3xl font-bold text-center mt-10">
-         Movie Database
-      </h1>
+    <div className="container mx-auto p-4">
+      <h1 className="text-3xl font-bold text-center my-6">Movie Database</h1>
+      
+      <SearchBar onSearch={setSearchQuery} />
+      
+      <HomePage 
+        searchQuery={searchQuery}
+        handleMovieClick={handleMovieClick} 
+      />
+
+      {selectedMovieId && (
+        <MovieDetails 
+          movieId={selectedMovieId} 
+          onClose={handleCloseDetails} 
+        />
+      )}
     </div>
   );
 }
