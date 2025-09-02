@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const API_KEY = '8cbb0829';
+const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
 
 function MovieDetails({ movieId, onClose }) {
   const [movie, setMovie] = useState(null);
@@ -15,7 +15,7 @@ function MovieDetails({ movieId, onClose }) {
       setError(null);
       
       try {
-        const response = await fetch(`https://www.omdbapi.com/?i=${movieId}&apikey=${'8cbb0829'}`);
+        const response = await fetch(`https://www.omdbapi.com/?i=${movieId}&apikey=${API_KEY}`);
         
         if (!response.ok) {
           throw new Error('Network response was not ok');

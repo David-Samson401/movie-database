@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import MovieCard from './MovieCard';
 
-const API_KEY = '8cbb0829';
+const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
 
 function HomePage({ searchQuery, handleMovieClick }) {
   const [movies, setMovies] = useState([]);
@@ -14,7 +14,7 @@ function HomePage({ searchQuery, handleMovieClick }) {
     
     try {
       const searchTerm = query || "action"; 
-      const response = await fetch(`https://www.omdbapi.com/?s=${searchTerm}&apikey=${'8cbb0829'}`);
+      const response = await fetch(`https://www.omdbapi.com/?s=${searchTerm}&apikey=${API_KEY}`);
       
       if (!response.ok) {
         throw new Error('Network response was not ok');

@@ -3,6 +3,8 @@ import SearchBar from './components/SearchBar';
 import HomePage from './components/HomePage';
 import MovieDetails from './components/MovieDetails';
 
+
+const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedMovieId, setSelectedMovieId] = useState(null);
